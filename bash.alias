@@ -1,0 +1,120 @@
+# Variations on common bash commands and exports.
+
+# Searching: (http://hayne.net/MacDev/Bash/aliases.bash)
+# ff:  to find a file under the current directory
+ff() {
+	/usr/bin/find . -name "$@"
+}
+# ffs: to find a file whose name starts with a given string
+ffs() {
+	/usr/bin/find . -name "$@"'*'
+}
+# ffe: to find a file whose name ends with a given string
+ffe() {
+	/usr/bin/find . -name '*'"$@"
+}
+
+# The following aliases (save & show) are for saving frequently used directories
+# You can save a directory using an abbreviation of your choosing. Eg. save ms
+# You can subsequently move to one of the saved directories by using cd with
+# the abbreviation you chose. Eg. cd ms  (Note that no '$' is necessary.)
+# (http://hayne.net/MacDev/Bash/aliases.bash)
+alias sdirs='source ~/.dirs' 
+alias show='cat ~/.dirs'
+save() {
+	/usr/bin/sed "/$@/d" ~/.dirs > ~/.dirs1;
+	\mv ~/.dirs1 ~/.dirs;
+	echo "$@"=\"`pwd`\" >> ~/.dirs;
+	source ~/.dirs;
+}
+
+# Initialization for the above 'save' facility:
+# source the .sdirs file:
+sdirs
+# set the bash option so that no '$' is required when using the above facility
+shopt -s cdable_vars
+
+
+# ls variations.
+alias l='ls'
+alias ls='ls -B --color="always"' # Linux Version
+#alias ls='ls -G' # Mac Version
+alias la='ls -a'
+alias ll='ls -alg'
+alias lr='ls -Ra'
+alias lsmac='alias ls="ls -G"'
+alias cl="clear; ls"
+alias lc="cl"
+
+
+# mkdir and enter it.
+mkd() {
+	mkdir $1 && cd $1
+}
+
+# When entering a directory, list the contents.
+cd() {
+	builtin cd "$@" && ls
+}
+
+# Easier navigation.
+alias c.="cd .."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ,,="cd ../.."
+alias -- -="cd -"
+
+alias v='vim'
+
+alias lo='logout'
+
+# alias chk="du -sh ~"
+
+# interactive, verbose.
+alias mv="mv -iv"
+
+# Ignore case, color it.
+alias grep='grep --colour=auto -i'
+
+alias h="history"
+
+# Color diff, plus columns, and suppress common lines.
+alias diff="colordiff"
+alias diff="diff -y"
+alias diffs="diff -y --suppress-common-lines"
+
+# Force deletions.
+alias rmm='rm -rf'
+alias rf='rmm'
+
+# Stabby shortcut.
+alias kl='kill -9'
+
+# Running processes.
+alias pa='ps aux'
+
+# Interactive, recursive, verbose.
+alias cp="cp -riv"
+
+# Zip shortcuts.
+alias csctar="tar cvfz"
+alias cszip="csctar"
+alias csczip="csctar"
+alias csz="csctar"
+alias cszp="echo 'tar cvfz'"
+alias csczipp="cszp"
+
+# Compilation Shortcuts 
+alias go='g++ -o'
+
+# Make the history last forever.
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000
+
+# Prompt.
+export PS1="\[\e[32;44;1m\]\w\[\e[0m\] > "
+
+# Add the current folder to the path. Terrible security practice, I know.
+export PATH=$PATH:.
+
+set completion-ignore-case on

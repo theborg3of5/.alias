@@ -1,0 +1,25 @@
+if [ "$TERM" = "xterm" ]
+then
+	# Alias meta-commands.
+	. ~/.alias/alias.alias
+
+	# SVN Stuff.
+	. ~/.alias/svn.alias
+
+	# Variations on common bash commands.
+	. ~/.alias/bash.alias
+
+	# Fun Stuff.
+	. ~/.alias/fun.alias
+
+
+	# Specific to this particular machine. Not to be synced.
+	. ~/.alias/specific.alias
+
+
+	# WFU Stuff.
+	# . ~/.alias/wfu.alias
+
+	# Shodor-Specific Stuff.
+	# . ~/.alias/shodor.alias
+fi

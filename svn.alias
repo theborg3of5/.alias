@@ -1,0 +1,50 @@
+# SVN shortcuts.
+
+# Check out.
+alias sco='svn co'
+
+# Commits.
+alias sci='svn ci'
+alias scomm='svn commit'
+# Allows message on end without quotes.
+scom() {
+	message="$@"
+	svn commit -m "$message"
+}
+
+# Update.
+alias sup='svn up'
+alias supa='svn up *'
+
+# Status.
+alias sst='svn stat'
+alias ssta='svn stat *'
+
+# Update + Status.
+alias supt='svn up; echo "------------------------------"; svn stat'
+alias supat='svn up *; echo "------------------------------"; svn stat *'
+
+# Remove.
+alias srm='svn rm'
+
+# Add.
+alias sa='svn add'
+alias sadd='svn add'
+alias sad='svn add'
+
+# Move.
+alias smv='svn mv'
+
+# Diff.
+alias sdiff='svn diff'
+
+# Log.
+alias slog='svn log'
+
+# Properties.
+alias si='svn propedit svn:ignore '
+alias siset='svn pset svn:ignore '
+alias siget='svn pget svn:ignore '
+
+# Editor.
+export SVN_EDITOR=vim

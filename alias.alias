@@ -1,0 +1,44 @@
+# Alias Files: Editing/Running/Viewing Commands
+
+# Edit specific alias files.
+alias ali="v ~/.alias/borg.alias"
+alias alia="v ~/.alias/alias.alias"
+alias alis="v ~/.alias/svn.alias"
+alias alib="v ~/.alias/bash.alias"
+alias alif="v ~/.alias/fun.alias"
+alias alisp="v ~/.alias/specific.alias"
+# alias aliw="v ~/.alias/wfu.alias"
+# alias alish="v ~/.alias/shodor.alias"
+
+# Viewing specific alias files.
+alias lali="less ~/.alias/borg.alias"
+alias lalia="less ~/.alias/alias.alias"
+alias lalis="less ~/.alias/svn.alias"
+alias lalib="less ~/.alias/bash.alias"
+alias lalif="less ~/.alias/fun.alias"
+alias lalisp="less ~/.alias/specific.alias"
+# alias laliw="less ~/.alias/wfu.alias"
+# alias lalish="less ~/.alias/shodor.alias"
+
+# Print the various commands.
+function alil
+{
+	printf "\n"
+	printf "	Alias Name	Which		\n"
+	printf "	----------      -----		\n"
+	printf "	ali		Borg		\n"
+	printf "	alia		Alias		\n"
+	printf "	alis		SVN		\n"
+	printf "	alib		Bash		\n"
+	printf "	alif		Fun		\n"
+	printf "	alisp		Specific	\n"
+	# printf "	aliw		WFU		\n"
+	# printf "	alish		Shodor		\n"
+	printf "\n"
+}
+
+# Reload it.
+alias .ali="source ~/.alias/borg.alias"
+
+# Reload it, but stay where you are.
+alias .alis="source ~/.alias/borg.alias | builtin cd -"
