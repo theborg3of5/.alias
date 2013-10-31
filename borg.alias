@@ -3,6 +3,9 @@ then
 	# Alias meta-commands.
 	. ~/.alias/alias.alias
 
+	# Git Stuff.
+	. ~/.alias/git.alias
+
 	# SVN Stuff.
 	. ~/.alias/svn.alias
 
