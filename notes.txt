@@ -1,0 +1,2 @@
+Command to link .inputrc to this one:
+ln ~/.alias/.inputrc ~/.inputrc
