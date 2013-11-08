@@ -21,6 +21,10 @@ gcomp() {
 	git push
 }
 
+# Push.
+alias gpush='git push'
+alias gci='git push'
+
 # Update.
 alias gup='git pull'
 alias gupa='git pull *'
