@@ -25,9 +25,10 @@ gcomp() {
 alias gpush='git push'
 alias gci='git push'
 
-# Update.
+# Pull/Update.
 alias gup='git pull'
 alias gupa='git pull *'
+alias gpull='git pull'
 
 # Status.
 alias gst='git status'
