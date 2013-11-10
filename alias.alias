@@ -1,5 +1,8 @@
 # Alias Files: Editing/Running/Viewing Commands
 
+# Move to alias folder.
+alias .alif="cd ~/.alias"
+
 # Edit specific alias files.
 alias ali="v ~/.alias/borg.alias"
 alias alia="v ~/.alias/alias.alias"

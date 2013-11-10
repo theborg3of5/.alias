@@ -27,16 +27,78 @@ alias gci='git push'
 
 # Pull/Update.
 alias gup='git pull'
-alias gupa='git pull *'
 alias gpull='git pull'
+# alias gupa='git pull *'
+gupa() {
+	currDir=$(pwd)
+	# echo "$currDir"
+	printf "\n=== Aliases ======================================\n"
+	builtin cd ~/.alias
+	git pull
+	printf "\n=== AHK ==========================================\n"
+	builtin cd /cygdrive/g/ahk
+	git pull
+	printf "\n=== Styles =======================================\n"
+	builtin cd /cygdrive/g/Userstyles
+	git pull
+	printf "\n=== Scripts ======================================\n"
+	builtin cd /cygdrive/g/Userscripts
+	git pull
+	printf "\n"
+	builtin cd $currDir
+}
+alias gpulla="gupa"
+alias gpua="gupa"
 
 # Status.
 alias gst='git status'
-alias gsta='git status *'
+#alias gsta='git status *'
+gsta() {
+	currDir=$(pwd)
+	# echo "$currDir"
+	printf "\n=== Aliases ======================================\n"
+	builtin cd ~/.alias
+	git status
+	printf "\n=== AHK ==========================================\n"
+	builtin cd /cygdrive/g/ahk
+	git status
+	printf "\n=== Styles =======================================\n"
+	builtin cd /cygdrive/g/Userstyles
+	git status
+	printf "\n=== Scripts ======================================\n"
+	builtin cd /cygdrive/g/Userscripts
+	git status
+	printf "\n"
+	builtin cd $currDir
+}
 
 # Update + Status.
 alias gupt='git pull; echo "------------------------------"; git status'
-alias gupat='git pull *; echo "------------------------------"; git status *'
+# alias gupat='git pull *; echo "------------------------------"; git status *'
+gupat() {
+	currDir=$(pwd)
+	# echo "$currDir"
+	printf "\n=== Aliases ======================================\n"
+	builtin cd ~/.alias
+	git pull
+	git status
+	printf "\n=== AHK ==========================================\n"
+	builtin cd /cygdrive/g/ahk
+	git pull
+	git status
+	printf "\n=== Styles =======================================\n"
+	builtin cd /cygdrive/g/Userstyles
+	git pull
+	git status
+	printf "\n=== Scripts ======================================\n"
+	builtin cd /cygdrive/g/Userscripts
+	git pull
+	git status
+	printf "\n"
+	builtin cd $currDir
+}
+alias gusta="gupat"
+alias gupta="gupat"
 
 # Remove.
 alias grm='git rm'
