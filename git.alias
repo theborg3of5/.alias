@@ -15,11 +15,11 @@ gcom() {
 
 # Add, commit, and push. Allows message on end without quotes.
 gcomp() {
-	git add -A
 	message="$@"
-	git commit -m "$message"
-	git push
+	git add -A && git commit -m "$message" && git push && exit
 }
+
+
 
 # Push.
 alias gpush='git push'
