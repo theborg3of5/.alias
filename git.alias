@@ -99,6 +99,7 @@ gupat() {
 }
 alias gusta="gupat"
 alias gupta="gupat"
+alias gustac="gusta && exit"
 
 # Remove.
 alias grm='git rm'
