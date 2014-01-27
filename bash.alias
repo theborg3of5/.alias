@@ -56,6 +56,7 @@ mkd() {
 cd() {
 	builtin cd "$@" && ls
 }
+alias bcd="builtin cd"
 
 # Easier navigation.
 alias c.="cd .."
