@@ -2,6 +2,9 @@ if [ "$TERM" = "xterm" ]
 then
 	# Alias meta-commands.
 	. ~/.alias/alias.alias
+	
+	# AHK Stuff.
+	. ~/.alias/ahk.alias
 
 	# Git Stuff.
 	. ~/.alias/git.alias

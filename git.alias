@@ -58,6 +58,7 @@ alias gpua="gupa"
 
 # Status.
 alias gst='git status'
+alias gust='git update; git status'
 #alias gsta='git status *'
 gsta() {
 	currDir=$(pwd)
@@ -85,19 +86,20 @@ gupat() {
 	currDir=$(pwd)
 	# echo "$currDir"
 	printf "\n=== Aliases ======================================\n"
-	builtin cd ~/.alias
+	bcd ~/.alias
 	git pull
 	git status
 	printf "\n=== AHK ==========================================\n"
-	builtin cd /cygdrive/g/ahk
+	bcd /cygdrive/g/ahk
 	git pull
+	ahkunzip
 	git status
 	printf "\n=== Styles =======================================\n"
-	builtin cd /cygdrive/g/Userstyles
+	bcd /cygdrive/g/Userstyles
 	git pull
 	git status
 	printf "\n=== Scripts ======================================\n"
-	builtin cd /cygdrive/g/Userscripts
+	bcd /cygdrive/g/Userscripts
 	git pull
 	git status
 	printf "\n"
