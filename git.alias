@@ -5,30 +5,25 @@ alias gco='git clone'
 alias gclo='git clone'
 
 # Commits.
-# alias gcom='git commit'
-alias gcomm='git commit'
-# Allows message on end without quotes.
-gcom() {
-	message="$@"
-	git commit -m "$message"
-}
+alias gcom='git commit'
 
-alias gitcommitpush='git add -A && git commit -m "$message" && git push'
+# Commit and push alias (assumes $message)
+# alias gitcommitpush='git add -A && git commit -m "$message" && git push'
+gitcommitpush() {
+	git add -A && git commit -m "$1" && git push
+}
 
 # Add, commit, and push. Allows message on end without quotes. Closes at finish.
 gcomp() {
 	message="$@"
-	gitcommitpush && exit
-	# git add -A && git commit -m "$message" && git push && exit
+	gitcommitpush message && exit
 }
 
 # Add, commit, and push. Allows message on end without quotes.
 gcompo() {
 	message="$@"
-	gitcommitpush
+	gitcommitpush message
 }
-
-
 
 # Push.
 alias gpush='git push'
@@ -37,32 +32,11 @@ alias gci='git push'
 # Pull/Update.
 alias gup='git pull'
 alias gpull='git pull'
-# alias gupa='git pull *'
-gupa() {
-	currDir=$(pwd)
-	# echo "$currDir"
-	printf "\n=== Aliases ======================================\n"
-	builtin cd ~/.alias
-	git pull
-	printf "\n=== AHK ==========================================\n"
-	builtin cd /cygdrive/g/ahk
-	git pull
-	printf "\n=== Styles =======================================\n"
-	builtin cd /cygdrive/g/Userstyles
-	git pull
-	printf "\n=== Scripts ======================================\n"
-	builtin cd /cygdrive/g/Userscripts
-	git pull
-	printf "\n"
-	builtin cd $currDir
-}
-alias gpulla="gupa"
-alias gpua="gupa"
 
 # Status.
 alias gst='git status'
-alias gust='git update; git status'
-#alias gsta='git status *'
+
+# Status for all four.
 gsta() {
 	currDir=$(pwd)
 	# echo "$currDir"
@@ -82,34 +56,45 @@ gsta() {
 	builtin cd $currDir
 }
 
-# Update + Status.
-alias gupt='git pull; echo "------------------------------"; git status'
-# alias gupat='git pull *; echo "------------------------------"; git status *'
-gupat() {
+# Update + status.
+gust() {
+	git pull
+	echo "--------------------------------------------------"
+	
+	# Special for AHK - unzip anything as needed.
+	if [ "$(pwd)" = "/cygdrive/g/ahk" ]
+	then
+		ahkunzip
+	fi
+	
+	git status
+}
+
+# Update + status for all four.
+gusta() {
 	currDir=$(pwd)
 	# echo "$currDir"
+	
 	printf "\n=== Aliases ======================================\n"
 	bcd ~/.alias
-	git pull
-	git status
+	gust
+	
 	printf "\n=== AHK ==========================================\n"
 	bcd /cygdrive/g/ahk
-	git pull
-	ahkunzip
-	git status
+	gust
+	
 	printf "\n=== Styles =======================================\n"
 	bcd /cygdrive/g/Userstyles
-	git pull
-	git status
+	gust
+	
 	printf "\n=== Scripts ======================================\n"
 	bcd /cygdrive/g/Userscripts
-	git pull
-	git status
+	gust
+	
 	printf "\n"
-	builtin cd $currDir
+	
+	bcd "$currDir"
 }
-alias gusta="gupat"
-alias gupta="gupat"
 alias gustac="gusta && exit"
 
 # Remove.
@@ -118,7 +103,6 @@ alias grm='git rm'
 # Add.
 alias ga='git add'
 alias gadd='git add'
-alias gad='git add'
 alias gall='git add -A'
 
 # Move.
@@ -132,10 +116,5 @@ alias glog='git log'
 
 # Config.
 alias gconfig='git config'
-alias gcon='git config'
 alias gconf='git config'
-alias gcnf='git config'
-alias gcg='git config --global'
-
-# Editor.
-# export GIT_EDITOR=vim
+alias gconfg='git config --global'
