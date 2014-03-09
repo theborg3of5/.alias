@@ -13,20 +13,25 @@ gitcommitpush() {
 	
 	if [ "$?" -eq 0 ] && [ $2 ]
 	then
-		exit
+		echo "exiting"
+		# exit
 	fi
-}
-
-# Add, commit, and push. Allows message on end without quotes. Closes at finish.
-gcomp() {
-	message="$@"
-	gitcommitpush "$message" 1
 }
 
 # Add, commit, and push. Allows message on end without quotes.
 gcompo() {
 	message="$@"
+	
+	# Special for AHK - unzip anything as needed.
+	if [ "$(pwd)" = "/cygdrive/g/ahk" ]
+	then
+		ahkzip
+	fi
+	
 	gitcommitpush "$message"
+}
+gcomp() {
+	gcompo "$1" && exit
 }
 
 # Push.
@@ -38,24 +43,37 @@ alias gup='git pull'
 alias gpull='git pull'
 
 # Status.
-alias gst='git status'
+gst() {
+	# Special for AHK - check zips too.
+	if [ "$(pwd)" = "/cygdrive/g/ahk" ]
+	then
+		ahkstatus
+	fi
+	
+	git status
+}
 
 # Status for all four.
 gsta() {
 	currDir=$(pwd)
 	# echo "$currDir"
+	
 	printf "\n=== Aliases ======================================\n"
 	builtin cd ~/.alias
-	git status
+	gst
+	
 	printf "\n=== AHK ==========================================\n"
 	builtin cd /cygdrive/g/ahk
-	git status
+	gst
+	
 	printf "\n=== Styles =======================================\n"
 	builtin cd /cygdrive/g/Userstyles
-	git status
+	gst
+	
 	printf "\n=== Scripts ======================================\n"
 	builtin cd /cygdrive/g/Userscripts
-	git status
+	gst
+	
 	printf "\n"
 	builtin cd $currDir
 	
@@ -77,7 +95,7 @@ gust() {
 		ahkunzip
 	fi
 	
-	git status
+	gst
 	
 	if [ $1 ]
 	then
