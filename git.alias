@@ -34,6 +34,7 @@ gcomp() {
 	gcompo "$1" && exit
 }
 
+
 # Push.
 alias gpush='git push'
 alias gci='git push'
