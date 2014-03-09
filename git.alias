@@ -12,7 +12,8 @@ gitcommitpush() {
 	git add -A && git commit -m "$1" && git push
 	if [ $? ] && [ $2 ]
 	then
-		exit
+		# exit
+		echo "would exit"
 	fi
 }
 
