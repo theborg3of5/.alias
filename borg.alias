@@ -2,6 +2,9 @@ if [ "$TERM" = "xterm" ]
 then
 	# Alias meta-commands.
 	. ~/.alias/alias.alias
+
+	# Variations on common bash commands.
+	. ~/.alias/bash.alias
 	
 	# AHK Stuff.
 	. ~/.alias/ahk.alias
@@ -11,9 +14,6 @@ then
 
 	# SVN Stuff.
 	. ~/.alias/svn.alias
-
-	# Variations on common bash commands.
-	. ~/.alias/bash.alias
 
 	# Fun Stuff.
 	. ~/.alias/fun.alias
