@@ -13,16 +13,19 @@ gcom() {
 	git commit -m "$message"
 }
 
+alias gitcommitpush='git add -A && git commit -m "$message" && git push'
+
 # Add, commit, and push. Allows message on end without quotes. Closes at finish.
 gcomp() {
 	message="$@"
-	git add -A && git commit -m "$message" && git push && exit
+	gitcommitpush && exit
+	# git add -A && git commit -m "$message" && git push && exit
 }
 
 # Add, commit, and push. Allows message on end without quotes.
 gcompo() {
 	message="$@"
-	git add -A && git commit -m "$message" && git push
+	gitcommitpush
 }
 
 
