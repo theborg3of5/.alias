@@ -15,9 +15,7 @@ gitcommitpush() {
 	then
 		exit
 	fi
-	
 }
-
 
 # Add, commit, and push. Allows message on end without quotes. Closes at finish.
 gcomp() {
@@ -60,7 +58,13 @@ gsta() {
 	git status
 	printf "\n"
 	builtin cd $currDir
+	
+	if [ $1 ]
+	then
+		exit
+	fi
 }
+alias gstac="gsta 1"
 
 # Update + status.
 gust() {
@@ -74,7 +78,13 @@ gust() {
 	fi
 	
 	git status
+	
+	if [ $1 ]
+	then
+		exit
+	fi
 }
+alias gustc="gust 1"
 
 # Update + status for all four.
 gusta() {
@@ -100,8 +110,13 @@ gusta() {
 	printf "\n"
 	
 	bcd "$currDir"
+	
+	if [ $1 ]
+	then
+		exit
+	fi
 }
-alias gustac="gusta && exit"
+alias gustac="gusta 1"
 
 # Remove.
 alias grm='git rm'

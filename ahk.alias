@@ -14,15 +14,15 @@ alias ahkzipstatus="echo; echo Git summary here; echo"
 alias ahkzip='ahk G:\\ahk\\Selector\\gitHelper.ahk z'
 alias ahkunzip='ahk G:\\ahk\\Selector\\gitHelper.ahk u'
 
-# Special git status/updates - also do zipping/unzipping.
-alias ahkstatus='bcd /cygdrive/g/ahk; ahkzipstatus; gst'
-alias ahkupdatestatus='bcd /cygdrive/g/ahk; gust; ahkunzip'
-alias ahkcomp='bcd /cygdrive/g/ahk; ahkzip; gcomp'
+# # Special git status/updates - also do zipping/unzipping.
+# alias ahkstatus='bcd /cygdrive/g/ahk; ahkzipstatus; gst'
+# alias ahkupdatestatus='bcd /cygdrive/g/ahk; gust; ahkunzip'
+# alias ahkcomp='bcd /cygdrive/g/ahk; ahkzip; gcomp'
 
 
-# Shorthand aliases.
-alias azip="ahkzip"
-alias auzip="ahkunzip"
-alias ast='ahkstatus'
-alias aust='ahkupdatestatus'
-alias acomp='ahkcomp'
+# # Shorthand aliases.
+# alias azip="ahkzip"
+# alias auzip="ahkunzip"
+# alias ast='ahkstatus'
+# alias aust='ahkupdatestatus'
+# alias acomp='ahkcomp'
