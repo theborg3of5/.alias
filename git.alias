@@ -21,7 +21,7 @@ gitcommitpush() {
 # Add, commit, and push. Allows message on end without quotes. Closes at finish.
 gcomp() {
 	message="$@"
-	gitcommitpush "$message" 1
+	gitcommitpush "$message" 0
 }
 
 # Add, commit, and push. Allows message on end without quotes.
