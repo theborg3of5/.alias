@@ -13,8 +13,7 @@ gitcommitpush() {
 	
 	if [ "$?" -eq 0 ] && [ $2 ]
 	then
-		# exit
-		echo "would exit"
+		exit
 	fi
 	
 }
