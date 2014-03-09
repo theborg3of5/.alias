@@ -11,7 +11,17 @@ alias gcom='git commit'
 gitcommitpush() {
 	git add -A && git commit -m "$1" && git push
 	echo "! $?"
+	if [ ! $? ]
+	then
+		echo "Success"
+	fi
+	
 	echo "$2"
+	if [ $2 ]
+	then
+		echo "Arg 2 success"
+	fi
+	
 	if [ ! $? ] && [ $2 ]
 	then
 		# exit
