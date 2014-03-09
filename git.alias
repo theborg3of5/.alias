@@ -15,6 +15,7 @@ gitcommitpush() {
 		# exit
 		echo "would exit"
 	fi
+	
 }
 
 # Add, commit, and push. Allows message on end without quotes. Closes at finish.
