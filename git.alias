@@ -10,16 +10,15 @@ alias gcom='git commit'
 # Commit and push alias (first parameter is message, second is whether to exit).
 gitcommitpush() {
 	git add -A && git commit -m "$1" && git push
-	echo "$?"
+	
 	if [ "$?" -eq 0 ]
 	then
 		echo "Success"
 	fi
 	
-	echo "$2"
 	if [ $2 ]
 	then
-		echo "Arg 2 success"
+		echo "Arg 2 exists"
 	fi
 	
 	if [ $? ] && [ $2 ]
