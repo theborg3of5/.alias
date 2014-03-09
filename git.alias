@@ -21,7 +21,7 @@ gitcommitpush() {
 		echo "Arg 2 exists"
 	fi
 	
-	if [ $? ] && [ $2 ]
+	if [ "$?" -eq 0 ] && [ $2 ]
 	then
 		# exit
 		echo "would exit"
