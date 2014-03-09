@@ -7,22 +7,25 @@ alias gclo='git clone'
 # Commits.
 alias gcom='git commit'
 
-# Commit and push alias (first parameter is message).
+# Commit and push alias (first parameter is message, second is whether to exit).
 gitcommitpush() {
 	git add -A && git commit -m "$1" && git push
-	echo $?
+	if [ $? && $2 ]
+	then
+		exit
+	fi
 }
 
 # Add, commit, and push. Allows message on end without quotes. Closes at finish.
 gcomp() {
 	message="$@"
-	gitcommitpush "$message"
+	gitcommitpush "$message" 1
 }
 
 # Add, commit, and push. Allows message on end without quotes.
 gcompo() {
 	message="$@"
-	gitcommitpush message
+	gitcommitpush "$message"
 }
 
 # Push.
