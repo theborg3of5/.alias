@@ -114,15 +114,15 @@ gusta() {
 	gust
 	
 	printf "\n=== AHK ==========================================\n"
-	bcd /cygdrive/g/ahk
+	bcd /cygdrive/c/Users/gavin/ahk
 	gust
 	
 	printf "\n=== Styles =======================================\n"
-	bcd /cygdrive/g/Userstyles
+	bcd /cygdrive/c/Users/gavin/Userstyles
 	gust
 	
 	printf "\n=== Scripts ======================================\n"
-	bcd /cygdrive/g/Userscripts
+	bcd /cygdrive/c/Users/gavin/Userscripts
 	gust
 	
 	printf "\n"
