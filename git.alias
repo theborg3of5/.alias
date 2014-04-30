@@ -23,7 +23,7 @@ gcompo() {
 	message="$@"
 	
 	# Special for AHK - unzip anything as needed.
-	if [ "$(pwd)" = "/cygdrive/g/ahk" ]
+	if [ "$(pwd)" = "$BORG_PATH/ahk" ]
 	then
 		ahkzip
 	fi
@@ -45,7 +45,7 @@ alias gpull='git pull'
 # Status.
 gst() {
 	# Special for AHK - check zips too.
-	if [ "$(pwd)" = "/cygdrive/g/ahk" ]
+	if [ "$(pwd)" = "$BORG_PATH/ahk" ]
 	then
 		ahkstatus
 	fi
@@ -63,15 +63,15 @@ gsta() {
 	gst
 	
 	printf "\n=== AHK ==========================================\n"
-	builtin cd /cygdrive/g/ahk
+	builtin cd "$BORG_PATH"/ahk
 	gst
 	
 	printf "\n=== Styles =======================================\n"
-	builtin cd /cygdrive/g/Userstyles
+	builtin cd "$BORG_PATH"/Userstyles
 	gst
 	
 	printf "\n=== Scripts ======================================\n"
-	builtin cd /cygdrive/g/Userscripts
+	builtin cd "$BORG_PATH"/Userscripts
 	gst
 	
 	printf "\n"
@@ -114,15 +114,15 @@ gusta() {
 	gust
 	
 	printf "\n=== AHK ==========================================\n"
-	bcd /cygdrive/c/Users/gavin/ahk
+	bcd "$BORG_PATH"/ahk
 	gust
 	
 	printf "\n=== Styles =======================================\n"
-	bcd /cygdrive/c/Users/gavin/Userstyles
+	bcd "$BORG_PATH"/Userstyles
 	gust
 	
 	printf "\n=== Scripts ======================================\n"
-	bcd /cygdrive/c/Users/gavin/Userscripts
+	bcd "$BORG_PATH"/Userscripts
 	gust
 	
 	printf "\n"
