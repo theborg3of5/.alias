@@ -1,5 +1,10 @@
 # Variations on common bash commands and exports.
 
+# Function for escaping backslashes.
+doubleBackslashes() {
+	echo ${1//\\/\\\\}
+}
+
 # Searching: (http://hayne.net/MacDev/Bash/aliases.bash)
 # ff:  to find a file under the current directory
 ff() {
