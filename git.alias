@@ -90,7 +90,7 @@ gust() {
 	echo "---------------------------------------------"
 	
 	# Special for AHK - unzip anything as needed.
-	if [ "$(pwd)" = "/cygdrive/g/ahk" ]
+	if [ "$(pwd)" = "$BORG_PATH/ahk" ]
 	then
 		ahkunzip
 	fi
