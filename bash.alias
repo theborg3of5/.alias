@@ -58,9 +58,9 @@ mkd() {
 }
 
 # When entering a directory, list the contents.
-cd() {
-	builtin cd "$@" && ls
-}
+#cd() {
+#	builtin cd "$@" && ls
+#}
 alias bcd="builtin cd"
 
 # Easier navigation.
