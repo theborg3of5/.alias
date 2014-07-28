@@ -1,9 +1,12 @@
 # base-files version 4.0-6
 
 # Borg Note: This should be the true .inputrc, make the one in the home directory point here.
- 
-set completion-ignore-case on
+
+# From http://lifehacker.com/supercharge-your-command-lines-history-search-with-four-478683529
+"\e[A": history-search-backward
+"\e[B": history-search-forward
 set show-all-if-ambiguous on
+set completion-ignore-case on
 
 # To pick up the latest recommended .inputrc content,
 # look in /etc/defaults/etc/skel/.inputrc
