@@ -89,6 +89,11 @@ alias diff="colordiff"
 alias diff="diff -y"
 alias diffs="diff -y --suppress-common-lines"
 
+# More common search shortcut.
+grepr() {
+	grep -r "$1" *
+}
+
 # Force deletions.
 alias rmm='rm -rf'
 alias rf='rmm'
