@@ -45,7 +45,7 @@ alias gpull='git pull'
 # Status.
 gst() {
 	# Special for AHK - check zips too.
-	if [ "$(pwd)" = "$BORG_PATH/ahk" ]
+	if [ "$(pwd)" = "$BORG_PATH""ahk" ]
 	then
 		ahkstatus
 	fi
