@@ -135,6 +135,7 @@ gusta() {
 	fi
 }
 alias gustac="gusta 1"
+alias gustak="gusta; cd ahk"
 
 # Remove.
 alias grm='git rm'
