@@ -66,6 +66,10 @@ gsta() {
 	builtin cd "$BORG_PATH"/ahk
 	gst
 	
+	printf "\n=== AHK Documents ================================\n"
+	builtin cd "$BORG_PATH"/Documents/AutoHotkey
+	gst
+	
 	printf "\n=== Styles =======================================\n"
 	builtin cd "$BORG_PATH"/Userstyles
 	gst
@@ -114,6 +118,10 @@ gusta() {
 	gust
 	
 	printf "\n=== AHK ==========================================\n"
+	bcd "$BORG_PATH"/ahk
+	gust
+	
+	printf "\n=== AHK Documents=================================\n"
 	bcd "$BORG_PATH"/ahk
 	gust
 	
