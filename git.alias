@@ -122,7 +122,7 @@ gusta() {
 	gust
 	
 	printf "\n=== AHK Documents=================================\n"
-	bcd "$BORG_PATH"/ahk
+	bcd "$BORG_PATH"/Documents/AutoHotkey
 	gust
 	
 	printf "\n=== Styles =======================================\n"
