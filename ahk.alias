@@ -7,12 +7,12 @@ alias ahk='/cygdrive/c/Program\ Files/AutoHotkey/AutoHotkey.exe'
 alias ahkf='bcd /cygdrive/g/ahk'
 
 # Zip/unzip/status - for git version control.
-# alias ahkzip='ahk G:\\ahk\\Selector\\gitHelper.ahk z'
-# alias ahkunzip='ahk G:\\ahk\\Selector\\gitHelper.ahk u'
-# alias ahkstatus='ahk G:\\ahk\\Selector\\gitHelper.ahk s'
-alias ahkzip='ahk $(doubleBackslashes "$BORG_AHK_ROOT_PATH"\\source\\standalone\\gitHelper.ahk\ z)'
-alias ahkunzip='ahk $(doubleBackslashes "$BORG_AHK_ROOT_PATH"\\source\\standalone\\gitHelper.ahk\ u)'
-alias ahkstatus='ahk $(doubleBackslashes "$BORG_AHK_ROOT_PATH"\\source\\standalone\\gitHelper.ahk\ s)'
+# alias ahkzip='ahk G:\\ahk\\Selector\\gitHelper\\gitHelper.ahk z'
+# alias ahkunzip='ahk G:\\ahk\\Selector\\gitHelper\\gitHelper.ahk u'
+# alias ahkstatus='ahk G:\\ahk\\Selector\\gitHelper\\gitHelper.ahk s'
+alias ahkzip='ahk $(doubleBackslashes "$BORG_AHK_ROOT_PATH"\\source\\standalone\\gitHelper\\gitHelper.ahk\ z)'
+alias ahkunzip='ahk $(doubleBackslashes "$BORG_AHK_ROOT_PATH"\\source\\standalone\\gitHelper\\gitHelper.ahk\ u)'
+alias ahkstatus='ahk $(doubleBackslashes "$BORG_AHK_ROOT_PATH"\\source\\standalone\\gitHelper\\gitHelper.ahk\ s)'
 
 # # Special git status/updates - also do zipping/unzipping.
 # alias ahkstatus='bcd /cygdrive/g/ahk; ahkzipstatus; gst'
