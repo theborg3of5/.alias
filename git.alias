@@ -117,7 +117,7 @@ gusta() {
 	bcd ~/.alias
 	gust
 	
-	printf "\n=== AHK Documents=================================\n"
+	printf "\n=== AHK Documents ================================\n"
 	bcd "$BORG_PATH"/Documents/AutoHotkey
 	gust
 	
