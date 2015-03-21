@@ -1,8 +1,6 @@
-#export BORG_PATH="/cygdrive/g"
 #export BORG_PATH="/cygdrive/c/Users/gborg/"
 #export BORG_PATH="/cygdrive/c/Users/gavin/"
 
-#export BORG_AHK_ROOT_PATH="C:\Users\gavin\ahk"
 #export BORG_AHK_ROOT_PATH="C:\Users\gavin\ahk"
 #export BORG_AHK_ROOT_PATH="C:\Users\gavin\ahk"
 
