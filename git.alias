@@ -23,7 +23,7 @@ gcompo() {
 	message="$@"
 	
 	# Special for AHK - unzip anything as needed.
-	if [ "$(pwd)" = "$BORG_PATH/ahk" ]
+	if [ "$(pwd)" = "$BORG_PATH""ahk" ]
 	then
 		ahkzip
 	fi
@@ -94,7 +94,7 @@ gust() {
 	echo "---------------------------------------------"
 	
 	# Special for AHK - unzip anything as needed.
-	if [ "$(pwd)" = "$BORG_PATH/ahk" ]
+	if [ "$(pwd)" = "$BORG_PATH""ahk" ]
 	then
 		ahkunzip
 	fi
