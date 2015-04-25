@@ -62,9 +62,9 @@ gsta() {
 	builtin cd ~/.alias
 	gst
 	
-	printf "\n=== AHK Documents ================================\n"
-	builtin cd "$BORG_PATH"/Documents/AutoHotkey
-	gst
+	# printf "\n=== AHK Documents ================================\n"
+	# builtin cd "$BORG_PATH"/Documents/AutoHotkey
+	# gst
 	
 	printf "\n=== AHK ==========================================\n"
 	builtin cd "$BORG_PATH"/ahk
@@ -117,9 +117,9 @@ gusta() {
 	bcd ~/.alias
 	gust
 	
-	printf "\n=== AHK Documents ================================\n"
-	bcd "$BORG_PATH"/Documents/AutoHotkey
-	gust
+	# printf "\n=== AHK Documents ================================\n"
+	# bcd "$BORG_PATH"/Documents/AutoHotkey
+	# gust
 	
 	printf "\n=== AHK ==========================================\n"
 	bcd "$BORG_PATH"/ahk
