@@ -1,11 +1,16 @@
 if [ "$TERM" = "xterm" ]
 then
+
+	# Specific to this particular machine. Not to be synced.
+	. ~/.alias/specific.alias
+
+
 	# Alias meta-commands.
 	. ~/.alias/alias.alias
 
 	# Variations on common bash commands.
 	. ~/.alias/bash.alias
-	
+
 	# AHK Stuff.
 	. ~/.alias/ahk.alias
 
@@ -17,10 +22,6 @@ then
 
 	# Fun Stuff.
 	. ~/.alias/fun.alias
-
-
-	# Specific to this particular machine. Not to be synced.
-	. ~/.alias/specific.alias
 
 
 	# WFU Stuff.

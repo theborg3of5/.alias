@@ -3,8 +3,8 @@
 # Array of folders to do git things with.
 gitLocations[1]=~/.alias
 gitLocations[2]="$BORG_PATH"ahk
-gitLocations[3]="$BORG_PATH"Documents/Userstyles
-gitLocations[4]="$BORG_PATH"Documents/Userscripts
+gitLocations[3]="$BORG_PATH"Userstyles
+gitLocations[4]="$BORG_PATH"Userscripts
 # Corresponding headers.
 gitHeaders[1]="\n=== Aliases ======================================\n"
 gitHeaders[2]="\n=== AHK ==========================================\n"
@@ -72,16 +72,16 @@ gsta() {
 	
 	for i in "${!gitLocations[@]}"
 	do
+		# printf "${gitLocations[$i]}"
 		if [ -d "${gitLocations[$i]}" ]; then
 			printf "${gitHeaders[$i]}"
-			# printf "${gitLocations[$i]}"
 			bcd "${gitLocations[$i]}"
 			gst
 		fi
 	done
 	
 	printf "\n"
-	builtin cd $currDir
+	bcd $currDir
 	
 	if [ $1 ]
 	then
