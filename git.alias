@@ -1,5 +1,17 @@
 # Git shortcuts.
 
+# Array of folders to do git things with.
+gitLocations[1]=~/.alias
+gitLocations[2]="$BORG_PATH"ahk
+gitLocations[3]="$BORG_PATH"Documents/Userstyles
+gitLocations[4]="$BORG_PATH"Documents/Userscripts
+# Corresponding headers.
+gitHeaders[1]="\n=== Aliases ======================================\n"
+gitHeaders[2]="\n=== AHK ==========================================\n"
+gitHeaders[3]="\n=== Styles =======================================\n"
+gitHeaders[4]="\n=== Scripts ======================================\n"
+
+
 # Check out.
 alias gco='git clone'
 alias gclo='git clone'
@@ -58,25 +70,15 @@ gsta() {
 	currDir=$(pwd)
 	# echo "$currDir"
 	
-	printf "\n=== Aliases ======================================\n"
-	builtin cd ~/.alias
-	gst
-	
-	# printf "\n=== AHK Documents ================================\n"
-	# builtin cd "$BORG_PATH"/Documents/AutoHotkey
-	# gst
-	
-	printf "\n=== AHK ==========================================\n"
-	builtin cd "$BORG_PATH"/ahk
-	gst
-	
-	printf "\n=== Styles =======================================\n"
-	builtin cd "$BORG_PATH"/Userstyles
-	gst
-	
-	printf "\n=== Scripts ======================================\n"
-	builtin cd "$BORG_PATH"/Userscripts
-	gst
+	for i in "${!gitLocations[@]}"
+	do
+		if [ -d "${gitLocations[$i]}" ]; then
+			printf "${gitHeaders[$i]}"
+			# printf "${gitLocations[$i]}"
+			bcd "${gitLocations[$i]}"
+			gst
+		fi
+	done
 	
 	printf "\n"
 	builtin cd $currDir
@@ -113,25 +115,15 @@ gusta() {
 	currDir=$(pwd)
 	# echo "$currDir"
 	
-	printf "\n=== Aliases ======================================\n"
-	bcd ~/.alias
-	gust
-	
-	# printf "\n=== AHK Documents ================================\n"
-	# bcd "$BORG_PATH"/Documents/AutoHotkey
-	# gust
-	
-	printf "\n=== AHK ==========================================\n"
-	bcd "$BORG_PATH"/ahk
-	gust
-	
-	printf "\n=== Styles =======================================\n"
-	bcd "$BORG_PATH"/Userstyles
-	gust
-	
-	printf "\n=== Scripts ======================================\n"
-	bcd "$BORG_PATH"/Userscripts
-	gust
+	for i in "${!gitLocations[@]}"
+	do
+		if [ -d "${gitLocations[$i]}" ]; then
+			printf "${gitHeaders[$i]}"
+			# printf "${gitLocations[$i]}"
+			bcd "${gitLocations[$i]}"
+			gust
+		fi
+	done
 	
 	printf "\n"
 	
